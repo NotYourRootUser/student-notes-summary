@@ -31,6 +31,4 @@ $studentNotes = [
         "note_text" => "Practicing associative arrays",
         "status" => "closed"
     ],
-
-
 ];

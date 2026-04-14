@@ -13,14 +13,18 @@ require_once "data.php";
 <body>
 
     <h1>Student Notes</h1>
+    <p><a href="./index.php">All notes</a></p>
+    <p><a href="./open-notes.php">Open notes</a></p>
+    <p><a href="./status-summary.php">Notes summary</a></p>
+
     <?php foreach ($studentNotes as $studentNote) { ?>
-        <h1>
+        <h2>
             <?php echo $studentNote["student_name"] ?>
-        </h1>
+        </h2>
         <p>
             <?php echo $studentNote["note_text"] ?>
         </p>
-        <p>
+        <p>Status: 
             <?php echo $studentNote["status"] ?>
         </p>
     <?php } ?>

@@ -14,6 +14,9 @@ $openNotes = getOpenNotes($studentNotes);
 <body>
 
     <h1>Open Student Notes</h1>
+        <p><a href="./index.php">All notes</a></p>
+    <p><a href="./open-notes.php">Open notes</a></p>
+    <p><a href="./status-summary.php">Notes summary</a></p>
 
     <?php foreach ($openNotes as $studentNote) { ?>
         <h2><?php echo $studentNote["student_name"]; ?></h2>
