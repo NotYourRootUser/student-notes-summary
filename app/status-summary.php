@@ -1,21 +1,11 @@
 <?php
 require_once "data.php";
+require_once "functions.php";
 
 $totalNotes = count($studentNotes);
-$openNotes = 0;
-$closedNotes = 0;
+$openNotes = countOpenNotes($studentNotes);
+$closedNotes = countClosedNotes($studentNotes);
 
-foreach ($studentNotes as $studentNote) {
-    if ($studentNote["status"] === "open") {
-        $openNotes++;
-    }
-}
-
-foreach ($studentNotes as $studentNote) {
-    if ($studentNote["status"] === "closed") {
-        $closedNotes++;
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +20,9 @@ foreach ($studentNotes as $studentNote) {
 <body>
 
     <h1>Student Notes Status Summary</h1>
+    <p><a href="./index.php">All notes</a></p>
+    <p><a href="./open-notes.php">Open notes</a></p>
+    <p><a href="./status-summary.php">Notes summary</a></p>
     <p>Total notes: <?php echo $totalNotes; ?></p>
     <p>Open notes: <?php echo $openNotes; ?></p>
     <p>Closed notes: <?php echo $closedNotes; ?></p>
